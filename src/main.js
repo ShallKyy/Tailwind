@@ -47,39 +47,59 @@ for (let i = 0; i < ham.length; i++) {
   }
 }
 
+const notifikasi = (pesan) => {
+  const warning = document.getElementById("warning");
+  warning.innerHTML = pesan;
+  warning.style.top = "120px";
+
+  setTimeout(function () {
+    warning.style.top = "-80px";
+  }, 2000);
+};
+
 // Ambil Input
+const email = document.getElementById("email");
+console.log(email.value);
 
 const btnSend = document.getElementById("btn-send");
 
 btnSend.addEventListener("click", () => {
   const nameInp = document.getElementById("name");
-  const email = document.getElementById("email");
+
   const telephone = document.getElementById("telephone");
-  const massage = document.getElementById("massagge");
-  
-  if(nameInp.value === "") {
-    console.log("nama kosong")
-    
+  let massage = document.getElementById("massagge");
 
-  }
-  if (email.value === "" ) {
-    console.log("email kosong")
-  }
-  if (telephone.value === "" ) {
-    console.log("telepon kosong")
-  }
-  if (massage.value === "" ) {
-    console.log("pesan kosong")
-  }
-  else{
-  const msg = `Halo Ferta, Saya ${nameInp.value}, jadi ini pesanku : ${massage.value}.
-  Hubungi Saya : Email : ${email.valur} Telepon : ${telephone.value}`;
+  const LinkKeWa = () => {
+    const msg = `
+    Halo Ferta, Saya ${nameInp.value}, jadi ini pesanku : ${massage.value}.
 
-  window.open(`https://wa.me/6285362802143?text=${msg}`, "_blank");
+    Hubungi Saya :
+     Email : ${email.value} 
+     ssTelepon : ${telephone.value}`;
 
-  nameInp.value = "";
-  telephone.value = "";
-  email.value = "";
-  massage.value = "";
+    window.open(`https://wa.me/6285362802143?text=${msg}`, "_blank");
+
+    nameInp.value = "";
+    telephone.value = "";
+    email.value = "";
+    massage.value = "";
+  };
+
+  if (nameInp.value === "") {
+    notifikasi("Wah masih ada yang kosong kaya nya :)");
+  } else if (email.value === "") {
+    notifikasi("Wah email masih yang kosong kaya nya :)");
+  } else if (telephone.value === "") {
+    notifikasi("Wah masih ada yang kosong kaya nya :)");
+  } else if (massage.value === "") {
+    notifikasi("Wah masih ada yang kosong kaya nya :)");
+    const uji = confirm("Apakah pesan ingin kosong?");
+    if (uji === false) {
+      alert("silahkan isi pesan");
+    } else {
+      LinkKeWa();
+    }
+  } else {
+    LinkKeWa();
   }
 });

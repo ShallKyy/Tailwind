@@ -592,6 +592,10 @@ video {
   }
 }
 
+.fixed {
+  position: fixed;
+}
+
 .absolute {
   position: absolute;
 }
@@ -606,6 +610,10 @@ video {
 
 .-bottom-0\.5 {
   bottom: -0.125rem;
+}
+
+.-top-\[80px\] {
+  top: -80px;
 }
 
 .left-0 {
@@ -734,6 +742,10 @@ video {
   width: 250px;
 }
 
+.w-\[350px\] {
+  width: 350px;
+}
+
 .w-full {
   width: 100%;
 }
@@ -848,6 +860,11 @@ video {
   background-color: rgb(163 230 53 / var(--tw-bg-opacity));
 }
 
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
 .bg-slate-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(241 245 249 / var(--tw-bg-opacity));
@@ -864,10 +881,6 @@ video {
 
 .fill-current {
   fill: currentColor;
-}
-
-.p-4 {
-  padding: 1rem;
 }
 
 .px-1 {
@@ -1086,6 +1099,12 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
@@ -1094,6 +1113,11 @@ video {
 
 .shadow-secondary {
   --tw-shadow-color: #64748b;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.shadow-slate-600 {
+  --tw-shadow-color: #475569;
   --tw-shadow: var(--tw-shadow-colored);
 }
 
@@ -1109,12 +1133,16 @@ video {
   transition-duration: 300ms;
 }
 
+.ease-in {
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
 .ease-in-out {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .navbar-fixed {
@@ -1124,7 +1152,7 @@ body {
   --tw-bg-opacity: 0.8;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  box-shadow: inset 0 -1px 0 0 rgba(0,0,0,0.2);
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
 }
 
 .hamburger-line {
@@ -1169,6 +1197,22 @@ body {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-duration: 1000ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#warning {
+  transition: 0.2s;
+}
+
+.blink {
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
 }
 
 .hover\:border-blue-500:hover {
