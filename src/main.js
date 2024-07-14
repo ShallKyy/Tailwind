@@ -70,8 +70,8 @@ btnSend.addEventListener("click", () => {
   let massage = document.getElementById("massagge");
 
   const LinkKeWa = () => {
-    const msg = `
-    Halo Ferta, Saya ${nameInp.value}, jadi ini pesanku : ${massage.value}.
+    const msg = 
+    `Halo Ferta, Saya ${nameInp.value}, jadi ini pesanku : ${massage.value}.
 
     Hubungi Saya :
      Email : ${email.value} 
